@@ -11,17 +11,20 @@ let Doors = [1, 2, 3];
 let WinningDoor = randomIntBetweenTwoNumbers(0, 2);
 Doors[WinningDoor] = "Fcking new car";
 
-function gameMode(end) {
+function gameMode() {
   return new Promise((resolve, reject) => {
-    rl.question("Please choose a door between 1-3  ", (answer) => {
-      if (Doors[answer - 1] === "Fcking new car") {
-        console.log("You win!");
+    rl.question(
+      "Please choose a door between 1-3. If you pich the right, you will get the new car! If you dont u have to pay me 5000$. ",
+      (answer) => {
+        if (Doors[answer - 1] === "Fcking new car") {
+          console.log("Congrats, you pick the right door. The car is yours! ");
+          resolve(false);
+        } else {
+          console.log("You loose,give me your money");
+        }
         resolve(false);
-      } else {
-        console.log("You loose,give me your money");
       }
-      resolve(false);
-    });
+    );
   });
 }
 async function game() {
