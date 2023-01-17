@@ -25,9 +25,8 @@ function gameMode(end) {
   });
 }
 async function game() {
-  let end = false;
-  do end = await gameMode();
-  while (end === true);
+  end = await gameMode();
+
   rl.close();
 }
 
