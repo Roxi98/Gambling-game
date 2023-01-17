@@ -20,7 +20,7 @@ function gameMode(end) {
       } else {
         console.log("You loose,give me your money");
       }
-      resolve(true);
+      resolve(false);
     });
   });
 }
